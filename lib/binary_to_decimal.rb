@@ -5,17 +5,19 @@
 # Calculate  and return the decimal value for this binary number using
 # the algorithm you devised in class.
 def binary_to_decimal(binary_array)
-
-  total = []
-  binary_array.reverse.each_with_index do |num, index|
-    total << num * (2 ** index)
-  end
+  decimals = 0
+  total_decimal = 0
+  index = binary_array.length - 1
   
-  puts total.sum
-  return total.sum
+  binary_array.each do |num|
+    decimals = num * (2 ** index)
+    total_decimal = total_decimal.to_f + decimals.to_f
+    index = index - 1
+  end
+  return total_decimal
 end
 
-binary_array = [0, 0, 1, 0, 1, 1, 0, 1]
-binary_to_decimal(binary_array)
+binary_num = [0, 0, 1, 0, 1, 1, 0, 1]
+binary_to_decimal(binary_num)
 
 
