@@ -8,16 +8,14 @@ def binary_to_decimal(binary_array)
   decimals = 0
   total_decimal = 0
   index = binary_array.length - 1
-  
   binary_array.each do |num|
     decimals = num * (2 ** index)
-    total_decimal = total_decimal.to_f + decimals.to_f
+    total_decimal = total_decimal + decimals
     index = index - 1
   end
+  puts total_decimal
   return total_decimal
 end
 
 binary_num = [0, 0, 1, 0, 1, 1, 0, 1]
 binary_to_decimal(binary_num)
-
-
